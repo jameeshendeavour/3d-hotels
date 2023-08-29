@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true">
+  <input
+    id="uploadForm"
+    type="file"
+    name="file"
+    style="display: none"
+    accept="application/JSON"
+    (change)="changeListener($event)"
+  />
+  <mgl-map
+    [style]="'mapbox://styles/mapbox/light-v11'"
+    [zoom]="zoom"
+      [center]="center"
+      [centerWithPanTo]="true"
+      [pitch]="[pitch]"
+    [bearing]="[-17.6]"
+    (load)="onMapLoad($event)"
+    (idle)="onMapIdle($event)"
+  >
+    <mgl-control mglFullscreen></mgl-control>
+    <mgl-control mglNavigation></mgl-control>
+
+    <mgl-control mglScale unit="imperial" position="bottom-left"></mgl-control>
+    <mgl-control mglAttribution [compact]="true" position="bottom-right"
+      >Powered By - nSpire insights</mgl-control
+    >
+    <mgl-control
+      mglGeolocate
+      [trackUserLocation]="true"
+      [showUserLocation]="true"
+      position="top-right"
+    ></mgl-control>
+
+    <mgl-layer
+      id="add-3d-buildings"
+      type="fill-extrusion"
+      [source]="'composite'"
+      [sourceLayer]="'building'"
+      [paint]="{
+          'fill-extrusion-color': '#AAA',
+          'fill-extrusion-height': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          15,
+          0,
+          15.05,
+          ['get', 'height']
+          ],
+          'fill-extrusion-base': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          15,
+          0,
+          15.05,
+          ['get', 'min_height']
+          ],
+          'fill-extrusion-opacity': 0.3
+        }"
+    ></mgl-layer>
+    <mgl-geojson-source *ngIf="data" id="trace" [data]="data">
+    </mgl-geojson-source>
+    <mgl-layer
+      *ngIf="data"
+      id="trace"
+      type="fill-extrusion"
+      source="trace"
+      [paint]="{
+            'fill-extrusion-color': ['step', ['get', 'colour'], '#808080', 1, '#0000FF', 2, '#00FF00', 3, '#FFFF00', 4, '#FF0000', 5, '#D3D3D3'],
+            'fill-extrusion-height': ['get', 'height'],
+            'fill-extrusion-base': ['get', 'min_height'],
+            'fill-extrusion-opacity': 0.60
+          }"
+      (layerMouseEnter)="cursorStyle = 'pointer'"
+      (layerMouseLeave)="cursorStyle = ''"
+      (layerClick)="onClick($event)"
+    >
+    </mgl-layer>
+    <mgl-popup *ngIf="selectedLngLat" [lngLat]="selectedLngLat">
+      <span [innerHTML]="selectedElement?.['description']"></span>
+    </mgl-popup>
+  </mgl-map>
+</ion-content>
