@@ -66,19 +66,53 @@
       id="trace"
       type="fill-extrusion"
       source="trace"
+	  [layout]= "{
+                        'visibility': 'visible'
+                    }"
       [paint]="{
             'fill-extrusion-color': ['step', ['get', 'colour'], '#808080', 1, '#0000FF', 2, '#00FF00', 3, '#FFFF00', 4, '#FF0000', 5, '#D3D3D3'],
             'fill-extrusion-height': ['get', 'height'],
             'fill-extrusion-base': ['get', 'min_height'],
-            'fill-extrusion-opacity': 0.60
+            'fill-extrusion-opacity': 0.60,
+			'fill-extrusion-vertical-gradient': true,
+			'fill-extrusion-translate': [0,0]
           }"
       (layerMouseEnter)="cursorStyle = 'pointer'"
       (layerMouseLeave)="cursorStyle = ''"
       (layerClick)="onClick($event)"
     >
     </mgl-layer>
+	
     <mgl-popup *ngIf="selectedLngLat" [lngLat]="selectedLngLat">
       <span [innerHTML]="selectedElement?.['description']"></span>
     </mgl-popup>
+	
+	<mgl-geojson-source id="symbols-source">
+        <mgl-feature
+          *ngFor="let geometry of points"
+          [geometry]="geometry"
+        ></mgl-feature>
+      </mgl-geojson-source>
+      <mgl-layer
+        id="symbols"
+        type="symbol"
+        source="symbols-source"
+        [layout]="{
+          'text-size': 19,
+          'text-transform': 'uppercase',
+          'text-offset': [0, 0],
+          'text-field': ['get', 'message']
+        }"
+		[paint]= "{
+          'text-color': '#000',
+          'text-halo-color': '#fff',
+          'text-halo-width': 2
+        }"
+        (layerMouseEnter)="cursorStyle = 'pointer'"
+        (layerMouseLeave)="cursorStyle = ''"
+      >
+      </mgl-layer>
+	
+	
   </mgl-map>
 </ion-content>

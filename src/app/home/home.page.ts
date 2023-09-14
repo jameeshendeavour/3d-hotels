@@ -16,6 +16,7 @@ import { GeoJsonProperties } from 'geojson';
 export class HomePage implements OnInit {
 
   public data: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> | undefined;
+  public points: any;
   public selectedElement: GeoJsonProperties | undefined;
   public selectedLngLat: LngLat | undefined;
   public cursorStyle: string | undefined;
@@ -45,7 +46,7 @@ export class HomePage implements OnInit {
     /* @ts-ignore */
     this.center = center(data).geometry.coordinates;
     /* @ts-ignore */
-    // this.bb = bbox(data);
+    this.bb = bbox(data);
     // console.log(data.features[0].geometry.coordinates.slice()[0][0][0])
     // this.originalCoordinates = data.features[0].geometry.coordinates.slice()[0][0];
     // data.features[0].geometry.coordinates = [this.originalCoordinates[0]];
@@ -53,6 +54,33 @@ export class HomePage implements OnInit {
     // this.center = this.originalCoordinates[0] as [number, number];
     this.zoom = [14];
     this.pitch = 30;
+	
+	this.points = [
+    {
+      type: 'Point' as const,
+      coordinates: [103.8384040305209,
+							1.2898577280523967],
+							properties: {
+          message: 'Foo',
+        },
+    },
+    {
+      type: 'Point' as const,
+      coordinates: [103.8384040305209,
+							1.2898577280523967],
+							properties: {
+          message: 'Foo',
+        },
+    },
+    {
+      type: 'Point' as const,
+      coordinates: [103.8384040305209,
+							1.2898577280523967],
+							properties: {
+          message: 'Foo',
+        },
+    },
+	];
   }
 
   onMapLoad(map: any) {
@@ -61,6 +89,10 @@ export class HomePage implements OnInit {
     this.fileUploadControl(map)
     map.addControl(new MapboxStyleSwitcherControl());
     map.resize();
+	map.fitBounds(this.bb, {
+          maxZoom: 18,
+          center: this.center
+        });
   }
 
   onClick(evt: MapLayerMouseEvent) {
@@ -83,7 +115,7 @@ export class HomePage implements OnInit {
       /* @ts-ignore */
       this.center = center(data).geometry.coordinates;
       /* @ts-ignore */
-      // this.bb = bbox(data);
+      this.bb = bbox(data);
       // console.log(data.features[0].geometry.coordinates.slice()[0][0][0])
       // this.originalCoordinates = data.features[0].geometry.coordinates.slice()[0][0];
       // data.features[0].geometry.coordinates = [this.originalCoordinates[0]];
