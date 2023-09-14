@@ -87,7 +87,7 @@
       <span [innerHTML]="selectedElement?.['description']"></span>
     </mgl-popup>
 	
-	<mgl-geojson-source id="symbols-source">
+	<!--mgl-geojson-source id="symbols-source">
         <mgl-feature
           *ngFor="let geometry of points"
           [geometry]="geometry"
@@ -111,7 +111,7 @@
         (layerMouseEnter)="cursorStyle = 'pointer'"
         (layerMouseLeave)="cursorStyle = ''"
       >
-      </mgl-layer>
+      </mgl-layer-->
 	
 	
   </mgl-map>
