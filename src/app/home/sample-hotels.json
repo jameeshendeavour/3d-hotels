@@ -1,0 +1,417 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-77583647</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-49 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>1 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>62 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 2,
+				"min_height": 0,
+				"visibility": "visible",
+				"height": 5,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83833631692204,
+							1.2896754723578852
+						],
+						[
+							103.83835099438437,
+							1.2896499272500819
+						],
+						[
+							103.83854215645255,
+							1.2895626848942499
+						],
+						[
+							103.83885864215387,
+							1.2902875715164016
+						],
+						[
+							103.83881309410464,
+							1.2904231057286922
+						],
+						[
+							103.83875271849263,
+							1.2904566763192947
+						],
+						[
+							103.83877440815417,
+							1.2905109622953007
+						],
+						[
+							103.83871043731489,
+							1.290543041458534
+						],
+						[
+							103.83860815018494,
+							1.2902828132836817
+						],
+						[
+							103.83865403699116,
+							1.2902654688394364
+						],
+						[
+							103.83848334694364,
+							1.2898295636070714
+						],
+						[
+							103.83840802929092,
+							1.2898644627477439
+						],
+						[
+							103.83833631692204,
+							1.2896754723578852
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-77583647</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-55 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>5 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>21 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 1,
+				"min_height": 5,
+				"visibility": "visible",
+				"height": 13,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83833646746149,
+							1.2896774635962487
+						],
+						[
+							103.8384040305209,
+							1.2898577280523967
+						],
+						[
+							103.83863456716631,
+							1.2897708304180214
+						],
+						[
+							103.83854237643976,
+							1.2895645272167542
+						],
+						[
+							103.83835736980643,
+							1.2896468662448797
+						],
+						[
+							103.83833646746149,
+							1.2896774635962487
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-77583647</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-72 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>3 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>12 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 3,
+				"min_height": 5,
+				"visibility": "visible",
+				"height": 10,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.838481388464,
+							1.2898320864020577
+						],
+						[
+							103.83862704038376,
+							1.289769284644649
+						],
+						[
+							103.83885405926111,
+							1.2902865304929777
+						],
+						[
+							103.83880633155639,
+							1.2904319351204237
+						],
+						[
+							103.83875331928715,
+							1.29045248644141
+						],
+						[
+							103.8387679865408,
+							1.2905159324664624
+						],
+						[
+							103.83870512515671,
+							1.2905394050709589
+						],
+						[
+							103.83861099471869,
+							1.2902869987313324
+						],
+						[
+							103.83865052756159,
+							1.2902652627022207
+						],
+						[
+							103.838481388464,
+							1.2898320864020577
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-35015684</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-55 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>1 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>8 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 2,
+				"min_height": 10,
+				"visibility": "visible",
+				"height": 18,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83870933715883,
+							1.290540553604913
+						],
+						[
+							103.83877767864107,
+							1.2905157084605179
+						],
+						[
+							103.838750756239,
+							1.290453595598379
+						],
+						[
+							103.83880874295113,
+							1.290428750453131
+						],
+						[
+							103.83885844584739,
+							1.2902879612919947
+						],
+						[
+							103.83881909772112,
+							1.2901989328466499
+						],
+						[
+							103.83859957659644,
+							1.290283820434226
+						],
+						[
+							103.83870933715883,
+							1.290540553604913
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-35015684</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-55 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>1 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>8 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 2,
+				"min_height": 0,
+				"visibility": "visible",
+				"height": 10,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83882834431427,
+							1.2908766618677135
+						],
+						[
+							103.83895348398528,
+							1.2905449363239683
+						],
+						[
+							103.8394654189998,
+							1.2907401805064894
+						],
+						[
+							103.83934027933049,
+							1.2910605325788823
+						],
+						[
+							103.83882834431427,
+							1.2908766618677135
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-35015684</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-55 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>1 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>8 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 1,
+				"min_height": 10,
+				"visibility": "visible",
+				"height": 18,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83882834431427,
+							1.2908766618677135
+						],
+						[
+							103.83895348398528,
+							1.2905449363239683
+						],
+						[
+							103.8394654189998,
+							1.2907401805064894
+						],
+						[
+							103.83934027933049,
+							1.2910605325788823
+						],
+						[
+							103.83882834431427,
+							1.2908766618677135
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-35015684</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-55 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>1 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>8 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 4,
+				"min_height": 18,
+				"visibility": "visible",
+				"height": 30,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83882908973027,
+							1.290876794046838
+						],
+						[
+							103.8389598785821,
+							1.2909222742762979
+						],
+						[
+							103.83900537035658,
+							1.2907630934717816
+						],
+						[
+							103.83888405895812,
+							1.2907214032596244
+						],
+						[
+							103.83882908973027,
+							1.290876794046838
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<h2>Details </h2><h4>Saiboo Street InterContinental Robertson Quay </h4><table class=\"popup-description\">\n        <tr ><td>Global Cell ID</td><td>:</td></td><td>525-03-35015684</td></tr >\n\t\t<tr ><td>Avg WIFI RSSI</td><td>:</td></td><td>-55 dBm</td></tr >\n\t\t<tr ><td>Sub Count</td><td>:</td></td><td>1 dBm</td></tr >\n\t\t<tr ><td>Test Count</td><td>:</td></td><td>8 dBm</td></tr >\n        </table > ",
+				"address": "Saiboo Street InterContinental Robertson Quay",
+				"colour": 3,
+				"min_height": 18,
+				"visibility": "visible",
+				"height": 25,
+				"minx": 103.83645,
+				"miny": 1.28785,
+				"maxx": 103.84065,
+				"maxy": 1.29235
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							103.83888974542947,
+							1.2907327733175152
+						],
+						[
+							103.83903569820615,
+							1.2907839385780023
+						],
+						[
+							103.83915700960472,
+							1.2908237337790923
+						],
+						[
+							103.8392252472662,
+							1.290645602872118
+						],
+						[
+							103.83895040112873,
+							1.2905451673557167
+						],
+						[
+							103.83892386426118,
+							1.2906266527748898
+						],
+						[
+							103.83888974542947,
+							1.2907327733175152
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		}
+	]
+}
