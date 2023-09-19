@@ -16,6 +16,8 @@ import { GeoJsonProperties } from 'geojson';
 export class HomePage implements OnInit {
 
   public data: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> | undefined;
+  public outline: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> | undefined;
+  public block: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> | undefined;
   public points: any;
   public selectedElement: GeoJsonProperties | undefined;
   public selectedLngLat: LngLat | undefined;
@@ -40,9 +42,26 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     const data: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> = (await import(
-      './building.geo.json'
+      './hexagon.geo.json'
     )) as any;
     this.data = data;
+	
+	
+	const outline: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> = (await import(
+      './outline.geo.json'
+    )) as any;
+    this.outline = outline;
+	
+	
+	
+	const block: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon> = (await import(
+      './block.geo.json'
+    )) as any;
+    this.block = block;
+	
+	
+	
+	
     /* @ts-ignore */
     this.center = center(data).geometry.coordinates;
     /* @ts-ignore */
@@ -87,6 +106,7 @@ export class HomePage implements OnInit {
     this.map = map;
     this.add3DBuildingControl(map)
     this.fileUploadControl(map)
+	this.change3DLayerControl(map, this.data, this.block, this.outline)
     map.addControl(new MapboxStyleSwitcherControl());
     map.resize();
 	map.fitBounds(this.bb, {
@@ -190,6 +210,87 @@ export class HomePage implements OnInit {
 
     const fileUpload = new FileUpload();
     map.addControl(fileUpload, "top-right");
+  }
+  
+  
+  change3DLayerControl(map: any, data: any, block: any, outline: any) {
+    class LayerSwitcher {
+      onAdd(map: any) {
+        const div = document.createElement("div");
+        div.className = "mapboxgl-ctrl mapboxgl-ctrl-group";
+        div.innerHTML = `<button>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 416v64M80 32h192a32 32 0 0132 32v412a4 4 0 01-4 4H48h0V64a32 32 0 0132-32zM320 192h112a32 32 0 0132 32v256h0-160 0V208a16 16 0 0116-16z"/><path d="M98.08 431.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM98.08 351.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM98.08 271.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM98.08 191.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM98.08 111.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM178.08 351.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM178.08 271.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM178.08 191.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM178.08 111.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM258.08 431.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM258.08 351.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM258.08 271.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79z"/><ellipse cx="256" cy="176" rx="15.95" ry="16.03" transform="rotate(-45 255.99 175.996)"/><path d="M258.08 111.87a16 16 0 1113.79-13.79 16 16 0 01-13.79 13.79zM400 400a16 16 0 1016 16 16 16 0 00-16-16zM400 320a16 16 0 1016 16 16 16 0 00-16-16zM400 240a16 16 0 1016 16 16 16 0 00-16-16zM336 400a16 16 0 1016 16 16 16 0 00-16-16zM336 320a16 16 0 1016 16 16 16 0 00-16-16zM336 240a16 16 0 1016 16 16 16 0 00-16-16z"/></svg>
+
+        </button>`;
+        div.addEventListener("contextmenu", (e) => e.preventDefault());
+		
+		div.addEventListener("click", () => {
+			const traceVisibility = map.getLayoutProperty(
+				'trace',
+				'visibility'
+			);
+			const blockVisibility = map.getLayoutProperty(
+				'block',
+				'visibility'
+			);
+			const outlineVisibility = map.getLayoutProperty(
+				'outline',
+				'visibility'
+			);
+			if (traceVisibility === 'visible') {
+				map.setLayoutProperty('trace', 'visibility', 'none');
+				map.setLayoutProperty('block', 'visibility', 'visible');
+				map.setLayoutProperty('outline', 'visibility', 'none');
+				/* @ts-ignore */
+			    const cent = center(block).geometry.coordinates;
+			    /* @ts-ignore */
+			    const bb = bbox(block);
+				
+				map.fitBounds(bb, {
+				  maxZoom: 18,
+				  center: cent
+				});
+		
+			} else if (blockVisibility === 'visible') {
+				map.setLayoutProperty('trace', 'visibility', 'none');
+				map.setLayoutProperty('block', 'visibility', 'none');
+				map.setLayoutProperty('outline', 'visibility', 'visible');
+				
+				/* @ts-ignore */
+			    const cent = center(outline).geometry.coordinates;
+			    /* @ts-ignore */
+			    const bb = bbox(outline);
+				
+				map.fitBounds(bb, {
+				  maxZoom: 18,
+				  center: cent
+				});
+				
+			} else if (outlineVisibility === 'visible') {
+				map.setLayoutProperty('trace', 'visibility', 'visible');
+				map.setLayoutProperty('block', 'visibility', 'none');
+				map.setLayoutProperty('outline', 'visibility', 'none');
+				
+				/* @ts-ignore */
+			    const cent = center(data).geometry.coordinates;
+			    /* @ts-ignore */
+			    const bb = bbox(data);
+				
+				map.fitBounds(bb, {
+				  maxZoom: 18,
+				  center: cent
+				});
+				
+			}
+			
+        });
+
+        return div;
+      }
+    }
+
+    const layerSwitcher = new LayerSwitcher();
+    map.addControl(layerSwitcher, "top-right");
   }
 
 }
